@@ -1,21 +1,16 @@
-package classwork;
-
-import jdk.management.resource.internal.inst.FileInputStreamRMHooks;
+import classwork.User;
 
 import java.io.*;
-import java.lang.reflect.Field;
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 
 public class FileSystem {
 
-    static String path = "C:\\Users\\Mikhail\\IdeaProjects\\Java31\\task3\\src\\main\\java\\classwork";
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    static String pathToResource = "H:\\Java 3\\leson2 hw\\task3\\src\\main\\resources\\";
+
+    public static void main(String[] args) throws IOException {
+/*
         //System.out.println(Arrays.toString(File.listRoots()));
         File file = new File(path + "1.txt");
         File p = new File(path);
@@ -29,6 +24,19 @@ public class FileSystem {
             parent = parent.getParentFile();
         }
         dfs(new File("E:\\"), "", 3);
+*/
+        List<String> list = new ArrayList();
+        for(int i = 0; i <= 10; i++){
+            list.add(String.valueOf(i));
+        }
+
+        FileUtility fu = new FileUtility();
+        fu.sortEvenElements(new File(pathToResource +"//array.txt"), new File(pathToResource + "//pass.txt"));
+        fu.passwordGen(new File(pathToResource +"//login.txt"), new File(pathToResource + "//pass.txt"));
+//        fu.appender(new File(pathToResource +"//append.txt"), list);
+        fu.getNString(pathToResource +"//file.txt" , 4);
+        list.clear();
+        list = fu.getNString(pathToResource +"//file.txt" , 4);
     }
 
     static void writeUser(File file, User user) throws IOException {
