@@ -1,8 +1,10 @@
-public abstract class Stage {
+package classes.abstractClasses;
 
+import classes.Car;
+
+public abstract class Stage {
     protected int length;
     protected String description;
-
     public String getDescription() {
         return description;
     }
